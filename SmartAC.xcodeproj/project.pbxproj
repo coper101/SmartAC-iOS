@@ -7,18 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B2D09E2861D76F006A892C /* SmokeIllustrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B2D09D2861D76F006A892C /* SmokeIllustrationView.swift */; };
+		27B2D0A22861DCD3006A892C /* SnowBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B2D0A12861DCD3006A892C /* SnowBallView.swift */; };
+		27B2D0A42861DEC9006A892C /* SnowBallsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B2D0A32861DEC9006A892C /* SnowBallsView.swift */; };
 		27E77C7A2861709B00A911FD /* SmartACApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C792861709B00A911FD /* SmartACApp.swift */; };
-		27E77C7C2861709B00A911FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C7B2861709B00A911FD /* ContentView.swift */; };
 		27E77C7E2861709E00A911FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E77C7D2861709E00A911FD /* Assets.xcassets */; };
 		27E77C812861709E00A911FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E77C802861709E00A911FD /* Preview Assets.xcassets */; };
+		27E77C8B2861717400A911FD /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C8A2861717400A911FD /* Style.swift */; };
+		27E77C8E2861726100A911FD /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27E77C8D2861726100A911FD /* OpenSans-SemiBold.ttf */; };
+		27E77C922861740400A911FD /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C912861740400A911FD /* AppView.swift */; };
+		27E77C962861747E00A911FD /* TempDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C952861747E00A911FD /* TempDisplayView.swift */; };
+		27E77C9828617B6300A911FD /* TempModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C9728617B6300A911FD /* TempModelData.swift */; };
+		27E77C9A28617C4700A911FD /* TempSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C9928617C4700A911FD /* TempSliderView.swift */; };
+		27E77C9C28617C5000A911FD /* BottomControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C9B28617C5000A911FD /* BottomControlsView.swift */; };
+		27E77C9E28617EB200A911FD /* TempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C9D28617EB200A911FD /* TempData.swift */; };
+		27E77CA028619AC000A911FD /* ControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E77C9F28619AC000A911FD /* ControlButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B2D09D2861D76F006A892C /* SmokeIllustrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeIllustrationView.swift; sourceTree = "<group>"; };
+		27B2D0A12861DCD3006A892C /* SnowBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowBallView.swift; sourceTree = "<group>"; };
+		27B2D0A32861DEC9006A892C /* SnowBallsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowBallsView.swift; sourceTree = "<group>"; };
 		27E77C762861709B00A911FD /* SmartAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E77C792861709B00A911FD /* SmartACApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartACApp.swift; sourceTree = "<group>"; };
-		27E77C7B2861709B00A911FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		27E77C7D2861709E00A911FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27E77C802861709E00A911FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27E77C8A2861717400A911FD /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		27E77C8D2861726100A911FD /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		27E77C8F2861727200A911FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		27E77C912861740400A911FD /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		27E77C952861747E00A911FD /* TempDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDisplayView.swift; sourceTree = "<group>"; };
+		27E77C9728617B6300A911FD /* TempModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempModelData.swift; sourceTree = "<group>"; };
+		27E77C9928617C4700A911FD /* TempSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempSliderView.swift; sourceTree = "<group>"; };
+		27E77C9B28617C5000A911FD /* BottomControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlsView.swift; sourceTree = "<group>"; };
+		27E77C9D28617EB200A911FD /* TempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempData.swift; sourceTree = "<group>"; };
+		27E77C9F28619AC000A911FD /* ControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +55,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27B2D09F2861DCAE006A892C /* Bottom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				27E77C9B28617C5000A911FD /* BottomControlsView.swift */,
+				27E77C9F28619AC000A911FD /* ControlButtonView.swift */,
+			);
+			path = "Bottom Controls";
+			sourceTree = "<group>";
+		};
+		27B2D0A02861DCBC006A892C /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				27E77C952861747E00A911FD /* TempDisplayView.swift */,
+				27E77C9928617C4700A911FD /* TempSliderView.swift */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		27B2D0A52861DECC006A892C /* Snow Ball */ = {
+			isa = PBXGroup;
+			children = (
+				27B2D0A12861DCD3006A892C /* SnowBallView.swift */,
+				27B2D0A32861DEC9006A892C /* SnowBallsView.swift */,
+			);
+			path = "Snow Ball";
+			sourceTree = "<group>";
+		};
 		27E77C6D2861709B00A911FD = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +101,12 @@
 		27E77C782861709B00A911FD /* SmartAC */ = {
 			isa = PBXGroup;
 			children = (
+				27E77C8F2861727200A911FD /* Info.plist */,
 				27E77C792861709B00A911FD /* SmartACApp.swift */,
-				27E77C7B2861709B00A911FD /* ContentView.swift */,
-				27E77C7D2861709E00A911FD /* Assets.xcassets */,
+				27E77C882861714C00A911FD /* Model */,
+				27E77C872861714700A911FD /* Views */,
+				27E77C892861715000A911FD /* Styles */,
+				27E77C90286173D100A911FD /* Assets */,
 				27E77C7F2861709E00A911FD /* Preview Content */,
 			);
 			path = SmartAC;
@@ -63,8 +116,54 @@
 			isa = PBXGroup;
 			children = (
 				27E77C802861709E00A911FD /* Preview Assets.xcassets */,
+				27E77C9D28617EB200A911FD /* TempData.swift */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27E77C872861714700A911FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27E77C912861740400A911FD /* AppView.swift */,
+				27B2D09D2861D76F006A892C /* SmokeIllustrationView.swift */,
+				27B2D0A02861DCBC006A892C /* Temp */,
+				27B2D09F2861DCAE006A892C /* Bottom Controls */,
+				27B2D0A52861DECC006A892C /* Snow Ball */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27E77C882861714C00A911FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27E77C9728617B6300A911FD /* TempModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27E77C892861715000A911FD /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				27E77C8A2861717400A911FD /* Style.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		27E77C8C2861723B00A911FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				27E77C8D2861726100A911FD /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		27E77C90286173D100A911FD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				27E77C8C2861723B00A911FD /* Fonts */,
+				27E77C7D2861709E00A911FD /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E77C812861709E00A911FD /* Preview Assets.xcassets in Resources */,
+				27E77C8E2861726100A911FD /* OpenSans-SemiBold.ttf in Resources */,
 				27E77C7E2861709E00A911FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +237,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27E77C7C2861709B00A911FD /* ContentView.swift in Sources */,
+				27E77C9C28617C5000A911FD /* BottomControlsView.swift in Sources */,
+				27E77C9E28617EB200A911FD /* TempData.swift in Sources */,
+				27E77CA028619AC000A911FD /* ControlButtonView.swift in Sources */,
+				27E77C962861747E00A911FD /* TempDisplayView.swift in Sources */,
+				27E77C8B2861717400A911FD /* Style.swift in Sources */,
 				27E77C7A2861709B00A911FD /* SmartACApp.swift in Sources */,
+				27E77C9A28617C4700A911FD /* TempSliderView.swift in Sources */,
+				27E77C922861740400A911FD /* AppView.swift in Sources */,
+				27B2D09E2861D76F006A892C /* SmokeIllustrationView.swift in Sources */,
+				27B2D0A22861DCD3006A892C /* SnowBallView.swift in Sources */,
+				27B2D0A42861DEC9006A892C /* SnowBallsView.swift in Sources */,
+				27E77C9828617B6300A911FD /* TempModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +382,11 @@
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartAC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,9 +413,11 @@
 				DEVELOPMENT_TEAM = KB9D3Y7M29;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartAC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

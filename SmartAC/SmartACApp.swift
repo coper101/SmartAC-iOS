@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SmartACApp: App {
+    @StateObject var tempModelData: TempModelData = .init()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
+                .environmentObject(tempModelData)
         }
     }
 }
