@@ -11,3 +11,8 @@ let sampleTemp: Temperature = .init(
     kelvinValue: 290.15,
     unit: .celsius
 )
+
+let sampleTemp2: Temperature = .init(
+    kelvinValue: 320.15,
+    unit: .celsius
+)

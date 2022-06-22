@@ -11,6 +11,8 @@ struct BottomControlsView: View {
     // MARK: - Properties
     var appTheme: AppTheme
     @Binding var isTurnedOn: Bool
+    @Binding var isCoolOn: Bool
+    @Binding var isFanOn: Bool
 
     // MARK: - Body
     var body: some View {
@@ -30,14 +32,24 @@ struct BottomControlsView: View {
             
             ControlButtonView(
                 icon: .cool,
+                action: {
+                    withAnimation {
+                        isCoolOn.toggle()
+                    }
+                },
                 color: appTheme.onPrimary,
                 backgroundColor: appTheme.background,
-                isDisabled: !isTurnedOn
+                isDisabled: !isTurnedOn || appTheme.theme != .cold
             )
                 .fillMaxWidth()
             
             ControlButtonView(
                 icon: .fan,
+                action: {
+                    withAnimation {
+                        isFanOn.toggle()
+                    }
+                },
                 color: appTheme.onPrimary,
                 backgroundColor: appTheme.background,
                 isDisabled: !isTurnedOn
@@ -54,7 +66,9 @@ struct BottomControlsView_Previews: PreviewProvider {
     static var previews: some View {
         BottomControlsView(
             appTheme: .init(theme: .inactive),
-            isTurnedOn: .constant(false)
+            isTurnedOn: .constant(false),
+            isCoolOn: .constant(false),
+            isFanOn: .constant(false)
         )
             .previewLayout(.sizeThatFits)
             .padding()

@@ -9,15 +9,17 @@ import SwiftUI
 
 struct BallOffset: Identifiable {
     typealias Offset = (x: CGFloat, y: CGFloat)
-    var id = UUID().uuidString
     var offset: Offset
+    var id: String {
+        "\(offset.x)\(offset.y)"
+    }
 }
 
 struct SnowBallsView: View {
     // MARK: - Properties
-    @State var ballsYOffset = -(UIScreen.main.bounds.height / 2)
+    var isCoolOn: Bool
     
-    let ballsPosition: [BallOffset] = [
+    @State var ballsPosition: [BallOffset] = [
         .init(offset: (x: 30, y: 90)),
         .init(offset: (x: 334, y: 102)),
         .init(offset: (x: 131, y: 191)),
@@ -34,35 +36,50 @@ struct SnowBallsView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            Group {
-                ForEach(ballsPosition) { position in
-                    let offset = position.offset
-                    SnowBallView()
-                        .offset(
-                            x: offset.x,
-                            y: offset.y
-                        )
-                }
+            
+            ForEach(ballsPosition) { position in
+                let offset = position.offset
+                SnowBallView(
+                    offset: (
+                        x: offset.x,
+                        y: offset.y
+                    )
+                )
+                    .transition(.opacity)
             }
-            .offset(y: ballsYOffset)
-        }
+            
+        } //: ZStack
         .fillMaxSize(alignment: .topLeading)
-        .onAppear {
-            print("onAppear balls")
-            withAnimation(
-                .linear(duration: 50.0)
-                .repeatForever(autoreverses: false)
-            ) {
-                ballsYOffset = 1.8 * UIScreen.main.bounds.height
+        .onChange(of: isCoolOn) { isOn in
+            
+            guard isOn else {
+                ballsPosition.removeSubrange(
+                    (ballsPosition.count - 6)..<ballsPosition.count
+                )
+                return
+            }
+            
+            let offsetsToAdd: [BallOffset] = [
+                .init(offset: (x: 294 + 10, y: 294 - 10)),
+                .init(offset: (x: 331 - 10, y: 323 - 10)),
+                .init(offset: (x: 84 - 10, y: 521 + 10)),
+                .init(offset: (x: 350 - 15, y: 604 - 10)),
+                .init(offset: (x: 78 + 13, y: 687 - 10)),
+                .init(offset: (x: 259 - 10, y: 681 + 13))
+            ]
+            
+            withAnimation(.linear(duration: 4)) {
+                ballsPosition.append(contentsOf: offsetsToAdd)
             }
         }
+        
     }
 }
 
 // MARK: - Preview
 struct SnowBallsView_Previews: PreviewProvider {
     static var previews: some View {
-        SnowBallsView()
+        SnowBallsView(isCoolOn: false)
             .padding()
             .previewLayout(.sizeThatFits)
             .background(Colors.coldBackground.color)

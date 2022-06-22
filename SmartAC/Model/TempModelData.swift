@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-// Themes:
-// inactive - white + black (off)
-// hot - orange + white (on - 25 to 30)
-// cold - blue + white (on - 16 to 22)
-
 enum Theme: String, CaseIterable, Identifiable {
     case inactive
     case hot
@@ -69,6 +64,10 @@ class TempModelData: ObservableObject {
         kelvinValue: TempConstant.minTempCelsius.celsiusToKelvin(),
         unit: .celsius
     )
+    
+    @Published var isCoolOn = false
+    
+    @Published var isFanOn = false
     
     @Published var appTheme: AppTheme = .init(theme: .inactive)
     

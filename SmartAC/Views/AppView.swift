@@ -10,17 +10,7 @@ import SwiftUI
 struct AppView: View {
     // MARK: - Properties
     @EnvironmentObject var tempModelData: TempModelData
-    
-    @State var smokeXOffset: CGFloat = -(UIScreen.main.bounds.width * 1.2)
-    @State var smokeScale: CGFloat = 1.3
-    
-    @State var smoke2XOffset: CGFloat = -(UIScreen.main.bounds.width * 0.5)
-    
-    var smokeColor: Color {
-        tempModelData.appTheme.onPrimary.opacity(0.4)
-    }
 
-    
     var appTheme: AppTheme {
         tempModelData.appTheme
     }
@@ -50,7 +40,9 @@ struct AppView: View {
             // Row 3: BOTTOM CONTROLS
             BottomControlsView(
                 appTheme: tempModelData.appTheme,
-                isTurnedOn: $tempModelData.isTurnedOn
+                isTurnedOn: $tempModelData.isTurnedOn,
+                isCoolOn: $tempModelData.isCoolOn,
+                isFanOn: $tempModelData.isFanOn
             )
                 .padding(.horizontal, 21)
                 .padding(.bottom, 21)
@@ -62,57 +54,15 @@ struct AppView: View {
     var body: some View {
         ZStack {
             
-            // Layer 1: SMOKE &/OR SNOW
-            if tempModelData.isTurnedOn {
-                
-                SmokeIllustrationView(color: smokeColor)
-                    .scaleEffect(smokeScale)
-                    .offset(x: smoke2XOffset, y: -500)
-                    .offset(x: 0.5)
-                    .transition(.opacity)
-                    .onAppear {
-                        withAnimation(
-                            .linear(duration: 40.0)
-                            .repeatForever(autoreverses: false)
-                        ) {
-                            smoke2XOffset = (UIScreen.main.bounds.width) * 1.2
-                        }
-                    }
-                
-                SmokeIllustrationView(color: smokeColor)
-                    .scaleEffect(smokeScale)
-                    .offset(x: smoke2XOffset, y: 500)
-                    .offset(x: 0.5)
-                    .transition(.opacity)
-                    .onAppear {
-                        withAnimation(
-                            .linear(duration: 35.0)
-                            .repeatForever(autoreverses: false)
-                        ) {
-                            smoke2XOffset = (UIScreen.main.bounds.width) * 1.2
-                        }
-                    }
-                    
-                
-                SmokeIllustrationView(color: smokeColor)
-                    .scaleEffect(smokeScale)
-                    .offset(x: smokeXOffset)
-                    .transition(.opacity)
-                    .onAppear {
-                        withAnimation(
-                            .linear(duration: 30.0)
-                            .repeatForever(autoreverses: false)
-                        ) {
-                            smokeXOffset = (UIScreen.main.bounds.width) * 1.5
-                            smokeScale = 2.4
-                        }
-                    }
-                
+            // Layer 1: SMOKE
+            if tempModelData.isTurnedOn && tempModelData.isFanOn {
+                SmokeView()
+                    .zIndex(0)
             }
             
-            // Layer 2 SNOWBALLS
-            if appTheme.theme == .cold {
-                SnowBallsView()
+            // Layer 2: SNOWBALLS
+            if appTheme.theme == .cold && tempModelData.isTurnedOn {
+                SnowBallsView(isCoolOn: tempModelData.isCoolOn)
                     .zIndex(1)
             }
             
@@ -120,7 +70,7 @@ struct AppView: View {
             content
                 .zIndex(2)
             
-        }
+        } //: ZStack
         .fillMaxSize()
         .background(
             LinearGradient(
@@ -132,15 +82,10 @@ struct AppView: View {
                 endPoint: .bottom
             )
         )
-        .onChange(of: tempModelData.isTurnedOn) { isOn in
-            guard isOn else {
-                withAnimation {
-                    tempModelData.appTheme.theme = .inactive
-                }
-                return
-            }
-            changeThemeAccordToTemp(tempModelData.temperature.kelvinValue)
-        }
+        .onChange(
+            of: tempModelData.isTurnedOn,
+            perform: changeToInactive
+        )
         .onChange(
             of: tempModelData.temperature.kelvinValue,
             perform: changeThemeAccordToTemp
@@ -148,6 +93,16 @@ struct AppView: View {
     }
     
     // MARK: - Functions
+    func changeToInactive(isTurnedOn: Bool) {
+        guard isTurnedOn else {
+            withAnimation {
+                tempModelData.appTheme.theme = .inactive
+            }
+            return
+        }
+        changeThemeAccordToTemp(tempModelData.temperature.kelvinValue)
+    }
+    
     func changeThemeAccordToTemp(_ tempKelvin: Double) {
         let tempCelsius = tempKelvin.kelvinToCelsius()
         let minTempCelsius = TempConstant.minTempCelsius
@@ -155,7 +110,7 @@ struct AppView: View {
         let halfTempDifferenceCelsius = TempConstant.tempDifferentCelsius / 2
 
         let coldRange = minTempCelsius...(minTempCelsius + halfTempDifferenceCelsius)
-        let hotRange = (maxTempCelsius - halfTempDifferenceCelsius)...maxTempCelsius
+        let hotRange = (maxTempCelsius - (halfTempDifferenceCelsius - 1))...maxTempCelsius
         
         if hotRange.contains(tempCelsius) && appTheme.theme != .hot {
             print("change to hot")
@@ -168,6 +123,17 @@ struct AppView: View {
                 tempModelData.appTheme.theme = .cold
             }
         }
+        
+        print(
+            """
+                tempCelsius: \(tempCelsius)
+                coldRange: \(coldRange)
+                hotRange: \(hotRange)
+                isTurnedOn: \(tempModelData.isTurnedOn)
+                appTheme: \(appTheme.theme)
+                
+                """
+        )
     }
 }
 

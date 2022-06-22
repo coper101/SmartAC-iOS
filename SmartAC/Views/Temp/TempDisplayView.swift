@@ -61,18 +61,23 @@ struct TempDisplayView: View {
         appTheme.background
     }
     
+    var convertedTemperature: String {
+        "\(temperature.convertedValue.toWholeNumber())"
+    }
+    
     // MARK: - Body
     var body: some View {
         HStack(spacing: 18) {
             
-            // Col 1:
-            Text("\(temperature.convertedValue.toWholeNumber())")
+            // Col 1: TEMPERATURE IN CONVERTED VALUE (F/C)
+            Text(convertedTemperature)
+                .id(convertedTemperature)
                 .textStyle(
                     foregroundColor: onPrimary,
                     size: 75
                 )
             
-            // Col 2: Unit Toggle
+            // Col 2: UNIT TOGGLE
             VStack(spacing: 0) {
                 
                 // Row 1: Celsius
