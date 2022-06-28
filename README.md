@@ -5,7 +5,7 @@ App Dev Challenge #03
 SmartAC is an app for controlling your Air Conditioner from your smartphone.
 
 Features:
-- Adjust the temperature (16-30 degrees celsius)
+- Adjust the temperature (16 to 30 degree celsius)
 - Change modes such as fan and cool
 - Toggle power
 
